@@ -2,9 +2,11 @@
 
 function visualizarMenu(menuDeComida) {
     menuDeComida.forEach(plato => {
-        console.log(menuDeComida.nombre);
+        console.log(plato.nombre);
     });
 }
+
+visualizarMenu(menuDeComida);
 
 // Valores de cada plato en Sistema
 
