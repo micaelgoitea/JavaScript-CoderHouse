@@ -1,5 +1,11 @@
 //Propósito: Calcular la cuenta total de una mesa en un restaurante con todos los platos pedidos.
 
+function visualizarMenu(menuDeComida) {
+    menuDeComida.forEach(plato => {
+        console.log(menuDeComida.nombre);
+    });
+}
+
 // Valores de cada plato en Sistema
 
 let hamburguesaConPapasFritas = 500;
@@ -8,6 +14,7 @@ let papasConCheddar = 300;
 let ravioles = 480;
 let carneAlHorno = 590;
 let milanesaALaNapolitana = 600;
+
 
 // Función de cálculo del total de cada comida pedida.
 
