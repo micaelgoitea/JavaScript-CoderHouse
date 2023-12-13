@@ -2,6 +2,7 @@
 
 const menuDeComida = [
     {
+        ID: 1,
         nombre: "Hamburguesa con Papas Fritas",
         precio: 500,
         valoración: 5,
@@ -12,6 +13,7 @@ const menuDeComida = [
         tipoDeCocina: "Argentina"
     },
     {
+        ID: 2,
         nombre: "Fideos con Tuco",
         precio: 300,
         valoración: 3,
@@ -21,7 +23,8 @@ const menuDeComida = [
         descripcion:"Sabrosos fideos al dente con delicioso y aromático tuco casero.",
         tipoDeCocina: "Italiana"
     },
-    {
+    {   
+        ID: 3,
         nombre: "Porción de papas con Cheddar",
         precio: 800,
         valoración: 5,
@@ -32,6 +35,7 @@ const menuDeComida = [
         tipoDeCocina: "Argentina"
     },
     {
+        ID: 4,
         nombre: "Ravioles",
         precio: 700,
         valoración: 4,
@@ -42,6 +46,7 @@ const menuDeComida = [
         tipoDeCocina: "Italiana"
     },
     {
+        ID: 5,
         nombre: "Carne al Horno",
         precio: 1000,
         valoración: 4,
@@ -52,6 +57,7 @@ const menuDeComida = [
         tipoDeCocina: "Argentina"
     },
     {
+        ID: 6,
         nombre: "Milanesa a la Napolitana",
         precio: 1200,
         valoración: 5,
@@ -62,6 +68,7 @@ const menuDeComida = [
         tipoDeCocina: "Argentina"
     },
     {
+        ID: 7,
         nombre: "Tacos de Pollo, Carne o Verdura",
         precio: 1500,
         valoración: 5,
