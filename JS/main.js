@@ -1,5 +1,8 @@
 //Propósito: Calcular la cuenta total de una mesa en un restaurante con todos los platos pedidos.
 
+
+// Visualizar el menú completo con su código.
+
 function visualizarMenu(menuDeComida) {
     menuDeComida.forEach(plato => {
         console.log(plato.ID + " " + plato.nombre);
@@ -81,3 +84,18 @@ while(plato != "ESC") {
 
 alert("Resumen total de la cuenta:" + "\n" + listaDePedidos + "\n" + "Valor total de la mesa: " + "$" + totalCuenta);
 document.write("Resumen total de la cuenta:" + "\n" + listaDePedidos + "\n" + "Valor total de la mesa: " + "$" + totalCuenta);
+
+let sinTACC = true;
+
+function comidaParaCeliacos() {
+    const comidaSinTacc = menuDeComida.filter((plato)=>{
+        if (sinTACC) {
+            return plato.sinTACC === true;
+        } else {
+            return plato;
+        }
+    });
+    console.log(comidaSinTacc);
+}
+
+comidaParaCeliacos();
