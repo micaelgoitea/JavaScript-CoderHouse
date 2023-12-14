@@ -1,11 +1,11 @@
 //Propósito: Calcular la cuenta total de una mesa en un restaurante con todos los platos pedidos.
 
 
-// Visualizar el menú completo con su código.
+// Visualizar el menú completo con su valor de identificación.
 
 function visualizarMenu(menuDeComida) {
     menuDeComida.forEach(plato => {
-        console.log(plato.ID + " " + plato.nombre);
+        console.log(`${plato.ID} - ${plato.nombre}`);
     });
 }
 
@@ -17,7 +17,7 @@ function totalPorCadaComida(cantidad, plato) {
     return (cantidad * plato);
 }
 
-// Resumen de la cuenta de la mesa.
+// Resumen de la cuenta total de la mesa.
 
 let listaDePedidos = "";
 let totalCuenta = 0;
@@ -32,7 +32,7 @@ let plato = prompt("Ingresar número del menú pedido del 1 al 7 o ESC para cerr
             );
 let cantidadDePlatos = prompt ("Ingresa la cantidad de Platos pedidos del seleccionado en la mesa");
 
-while(plato != "ESC") {
+while (plato != "ESC") {
     
    switch (plato) {
        case "1":
@@ -85,17 +85,39 @@ while(plato != "ESC") {
 alert("Resumen total de la cuenta:" + "\n" + listaDePedidos + "\n" + "Valor total de la mesa: " + "$" + totalCuenta);
 document.write("Resumen total de la cuenta:" + "\n" + listaDePedidos + "\n" + "Valor total de la mesa: " + "$" + totalCuenta);
 
+// Array Method para filtrar y obtener solo la comida apta para celíacos.
+
 let sinTACC = true;
+let vegetariana = true;
+
+function filtrarComidaSinTACC(plato) {
+    if (sinTACC) {
+        return plato.sinTACC === true;
+    } else {
+        return plato;
+    }
+}
 
 function comidaParaCeliacos() {
-    const comidaSinTacc = menuDeComida.filter((plato)=>{
-        if (sinTACC) {
-            return plato.sinTACC === true;
-        } else {
-            return plato;
-        }
-    });
-    console.log(comidaSinTacc);
+    const comidaSinTacc = menuDeComida.filter(filtrarComidaSinTACC);
+    visualizarMenu(comidaSinTacc);
 }
 
 comidaParaCeliacos();
+
+// Array method para filtrar la comida para vegetarianos y celíacos.
+
+function filtrarComidaVegetariana(plato) {
+    if (vegetariana) {
+        return plato.vegetariano === true;
+    } else {
+        return plato;
+    }
+}
+
+function comidaParaCeliacosYVegetarianos() {
+    const comidaSinTaccYVegetarianas = menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);
+    visualizarMenu(comidaSinTaccYVegetarianas);
+}
+
+comidaParaCeliacosYVegetarianos();
