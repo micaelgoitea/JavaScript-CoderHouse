@@ -1,16 +1,5 @@
 //Propósito: Calcular la cuenta total de una mesa en un restaurante con todos los platos pedidos.
 
-
-// Visualizar el menú completo con su valor de identificación.
-
-function visualizarMenu(menuDeComida) {
-    menuDeComida.forEach(plato => {
-        console.log(`${plato.ID} - ${plato.nombre}`);
-    });
-}
-
-visualizarMenu(menuDeComida);
-
 // Función de cálculo del total de cada comida pedida.
 
 function totalPorCadaComida(cantidad, plato) {
@@ -100,6 +89,7 @@ function filtrarComidaSinTACC(plato) {
 
 function comidaParaCeliacos() {
     const comidaSinTacc = menuDeComida.filter(filtrarComidaSinTACC);
+    console.log("Platos celíacos:");
     visualizarMenu(comidaSinTacc);
 }
 
@@ -117,7 +107,26 @@ function filtrarComidaVegetariana(plato) {
 
 function comidaParaCeliacosYVegetarianos() {
     const comidaSinTaccYVegetarianas = menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);
+    console.log("Platos celíacos y vegetarianos:");
     visualizarMenu(comidaSinTaccYVegetarianas);
 }
 
 comidaParaCeliacosYVegetarianos();
+
+// Búsqueda del Plato mas económico
+
+function platoMasEconomico(listaDeComida) {
+
+    var valorMasEconomico = listaDeComida[0].precio;
+    var platoDeMenorValor = listaDeComida[0].nombre;
+
+    for (var i = 1; i < listaDeComida.length ; i++) {
+        if (listaDeComida[i].precio < valorMasEconomico) {
+            valorMasEconomico = listaDeComida[i].precio;
+            platoDeMenorValor = listaDeComida[i].nombre;
+        }
+    }
+    console.log ("Plato mas económico: " + platoDeMenorValor);
+}
+
+platoMasEconomico(menuDeComida);

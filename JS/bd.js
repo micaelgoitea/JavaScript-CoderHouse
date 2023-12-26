@@ -1,5 +1,7 @@
 // Array con los Platos de Comida
 
+const contenedorPlatos = document.getElementById('contenedor-platos');
+
 const menuDeComida = [
     {
         ID: 1,
@@ -9,8 +11,9 @@ const menuDeComida = [
         vegetariano: false,
         sinTACC: false,
         personasQueComen: 1,
-        descripcion: "Hamburguesa de carne vacuna, smasheada con mucho condimento y pan tostado en la Plancha, acompañada de unas crujuentes para fritas",
-        tipoDeCocina: "Argentina"
+        descripcion: "Hamburguesa de carne vacuna, smasheada con mucho condimento, acompañada de unas crujuentes para fritas",
+        tipoDeCocina: "Argentina",
+        img: 'IMG/Hamburguesa.png'
     },
     {
         ID: 2,
@@ -21,7 +24,8 @@ const menuDeComida = [
         sinTACC: false,
         personasQueComen: 1,
         descripcion:"Sabrosos fideos al dente con delicioso y aromático tuco casero.",
-        tipoDeCocina: "Italiana"
+        tipoDeCocina: "Italiana",
+        img: 'IMG/Fideos.png'
     },
     {   
         ID: 3,
@@ -32,7 +36,8 @@ const menuDeComida = [
         sinTACC: true,
         personasQueComen: 2,
         descripcion:"Papas doradas cubiertas de cheddar fundido, irresistible y delicioso.",
-        tipoDeCocina: "Argentina"
+        tipoDeCocina: "Argentina",
+        img: 'IMG/Papas.png'
     },
     {
         ID: 4,
@@ -43,7 +48,8 @@ const menuDeComida = [
         sinTACC: true,
         personasQueComen: 1,
         descripcion: "Ravioles rellenos de exquisitez, pasta tierna, en salsa encantadora.",
-        tipoDeCocina: "Italiana"
+        tipoDeCocina: "Italiana",
+        img: 'IMG/Ravioles.png'
     },
     {
         ID: 5,
@@ -54,7 +60,8 @@ const menuDeComida = [
         sinTACC: true,
         personasQueComen: 2,
         descripcion: "Carne al horno jugosa, papas doradas: una delicia asada perfecta.",
-        tipoDeCocina: "Argentina"
+        tipoDeCocina: "Argentina",
+        img: 'IMG/Carne.png'
     },
     {
         ID: 6,
@@ -65,7 +72,8 @@ const menuDeComida = [
         sinTACC: true,
         personasQueComen: 2,
         descripcion: "Milanesa tierna y crujiente, cubierta con salsa, queso derretido y tomate fresco: un placer napolitano irresistible.",
-        tipoDeCocina: "Argentina"
+        tipoDeCocina: "Argentina",
+        img: 'IMG/Milanesa.png'
     },
     {
         ID: 7,
@@ -76,10 +84,9 @@ const menuDeComida = [
         sinTACC: true,
         personasQueComen: 3,
         descripcion: "Tacos sabrosos con tortillas suaves, rellenos frescos, salsa picante y toppings coloridos. Experiencia mexicana auténtica.",
-        tipoDeCocina: "Mexicana"
+        tipoDeCocina: "Mexicana",
+        img: 'IMG/Tacos.png'
     }
 ]
 
-// Array con los medios de pago
-
-const mediosDePago = ["Efectivo", "Mercado Pago", "Tarjeta de Débito", "Tarjeta de Crédito"];
+const cuenta = [];
