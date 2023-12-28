@@ -43,6 +43,25 @@ function mostrarCuenta() {
 
 // Array Method para filtrar y obtener solo la comida apta para celíacos.
 
+const visualizarLaCartaParaCeliacos = () => {
+    menuDeComida.forEach(plato => {
+        if(plato.sinTACC) {
+            contenedorPlatosSinTacc.innerHTML += `
+            <div class="platos-container class="card" style="width: 16rem;">
+                <img src="${plato.img}" />
+                <h4>${plato.nombre}</h4>
+                <p>$${plato.precio}</p>
+                <p>Valoracion: ${plato.valoración}</p>
+                <p>${plato.tipoDeCocina}</p>
+                <p>${plato.descripcion}</p>
+                <button id="${plato.ID}" class="agregar">Agregar a la Cuenta</button>
+            </div>
+        `;
+        }
+        
+    });
+}
+
 let sinTACC = true;
 let vegetariana = true;
 

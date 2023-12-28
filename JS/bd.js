@@ -1,6 +1,7 @@
 // Array con los Platos de Comida
 
 const contenedorPlatos = document.getElementById('contenedor-platos');
+const contenedorPlatosSinTacc = document.getElementById('contenedor-platos-celiacos')
 
 const menuDeComida = [
     {
