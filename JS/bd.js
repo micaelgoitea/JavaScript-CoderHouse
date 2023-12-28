@@ -11,7 +11,7 @@ const menuDeComida = [
         vegetariano: false,
         sinTACC: false,
         personasQueComen: 1,
-        descripcion: "Hamburguesa de carne vacuna, smasheada con mucho condimento, acompañada de unas crujuentes para fritas",
+        descripcion: "Jugosa, tierna, sabrosa, irresistible, queso derretido, fresca, deliciosa, apetitosa.",
         tipoDeCocina: "Argentina",
         img: 'IMG/Hamburguesa.png'
     },

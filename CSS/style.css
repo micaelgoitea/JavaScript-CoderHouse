@@ -2,6 +2,11 @@ body {
     background-image: url(../IMG/Food.svg);
 }
 
+.logo {
+    width: 5rem;
+    height: 5rem;
+}
+
 img {
     width: 10rem;
     height: 10rem;
