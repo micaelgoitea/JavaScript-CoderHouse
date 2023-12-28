@@ -11,20 +11,20 @@ function totalPorCadaComida(cantidad, plato) {
 let listaDePedidos = "";
 let totalCuenta = 0;
 let plato = prompt("Ingresar número del menú pedido del 1 al 7 o ESC para cerrar la cuenta" + "\n"
-                            + menuDeComida[0].ID + " - " + menuDeComida[0].nombre + "\n"
-                            + menuDeComida[1].ID + " - " + menuDeComida[1].nombre + "\n"
-                            + menuDeComida[2].ID + " - " + menuDeComida[2].nombre + "\n"
-                            + menuDeComida[3].ID + " - " + menuDeComida[3].nombre + "\n"
-                            + menuDeComida[4].ID + " - " + menuDeComida[4].nombre + "\n"
-                            + menuDeComida[5].ID + " - " + menuDeComida[5].nombre + "\n"
-                            + menuDeComida[6].ID + " - " + menuDeComida[6].nombre + "\n"
-            );
-let cantidadDePlatos = prompt ("Ingresa la cantidad de Platos pedidos del seleccionado en la mesa");
+    + menuDeComida[0].ID + " - " + menuDeComida[0].nombre + "\n"
+    + menuDeComida[1].ID + " - " + menuDeComida[1].nombre + "\n"
+    + menuDeComida[2].ID + " - " + menuDeComida[2].nombre + "\n"
+    + menuDeComida[3].ID + " - " + menuDeComida[3].nombre + "\n"
+    + menuDeComida[4].ID + " - " + menuDeComida[4].nombre + "\n"
+    + menuDeComida[5].ID + " - " + menuDeComida[5].nombre + "\n"
+    + menuDeComida[6].ID + " - " + menuDeComida[6].nombre + "\n"
+);
+let cantidadDePlatos = prompt("Ingresa la cantidad de Platos pedidos del seleccionado en la mesa");
 
 while (plato != "ESC") {
-    
-   switch (plato) {
-       case "1":
+
+    switch (plato) {
+        case "1":
             listaDePedidos += cantidadDePlatos + " " + menuDeComida[0].nombre + " " + "$ " + menuDeComida[0].precio + "\n";
             totalCuenta += totalPorCadaComida(cantidadDePlatos, menuDeComida[0].precio);
             break;
@@ -53,22 +53,22 @@ while (plato != "ESC") {
             totalCuenta += totalPorCadaComida(cantidadDePlatos, menuDeComida[6].precio);
             break;
         default:
-           alert("Ingresar un menú disponible en la Carta")
-           break;
-   }
-   plato = prompt("Ingresar número del menú pedido del 1 al 7 o ESC para cerrar la cuenta" + "\n"
-                            + menuDeComida[0].ID + " - " + menuDeComida[0].nombre + "\n"
-                            + menuDeComida[1].ID + " - " + menuDeComida[1].nombre + "\n"
-                            + menuDeComida[2].ID + " - " + menuDeComida[2].nombre + "\n"
-                            + menuDeComida[3].ID + " - " + menuDeComida[3].nombre + "\n"
-                            + menuDeComida[4].ID + " - " + menuDeComida[4].nombre + "\n"
-                            + menuDeComida[5].ID + " - " + menuDeComida[5].nombre + "\n"
-                            + menuDeComida[6].ID + " - " + menuDeComida[6].nombre + "\n"
-            );
-    
+            alert("Ingresar un menú disponible en la Carta")
+            break;
+    }
+    plato = prompt("Ingresar número del menú pedido del 1 al 7 o ESC para cerrar la cuenta" + "\n"
+        + menuDeComida[0].ID + " - " + menuDeComida[0].nombre + "\n"
+        + menuDeComida[1].ID + " - " + menuDeComida[1].nombre + "\n"
+        + menuDeComida[2].ID + " - " + menuDeComida[2].nombre + "\n"
+        + menuDeComida[3].ID + " - " + menuDeComida[3].nombre + "\n"
+        + menuDeComida[4].ID + " - " + menuDeComida[4].nombre + "\n"
+        + menuDeComida[5].ID + " - " + menuDeComida[5].nombre + "\n"
+        + menuDeComida[6].ID + " - " + menuDeComida[6].nombre + "\n"
+    );
+
     if (plato != "ESC") {
-        cantidadDePlatos = prompt ("Ingresa la cantidad de Platos pedidos del seleccionado en la mesa");
-    }  
+        cantidadDePlatos = prompt("Ingresa la cantidad de Platos pedidos del seleccionado en la mesa");
+    }
 }
 
 alert("Resumen total de la cuenta:" + "\n" + listaDePedidos + "\n" + "Valor total de la mesa: " + "$" + totalCuenta);

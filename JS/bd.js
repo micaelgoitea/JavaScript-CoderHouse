@@ -23,11 +23,11 @@ const menuDeComida = [
         vegetariano: true,
         sinTACC: false,
         personasQueComen: 1,
-        descripcion:"Sabrosos fideos al dente con delicioso y aromático tuco casero.",
+        descripcion: "Sabrosos fideos al dente con delicioso y aromático tuco casero.",
         tipoDeCocina: "Italiana",
         img: 'IMG/Fideos.png'
     },
-    {   
+    {
         ID: 3,
         nombre: "Porción de papas con Cheddar",
         precio: 800,
@@ -35,7 +35,7 @@ const menuDeComida = [
         vegetariano: true,
         sinTACC: true,
         personasQueComen: 2,
-        descripcion:"Papas doradas cubiertas de cheddar fundido, irresistible y delicioso.",
+        descripcion: "Papas doradas cubiertas de cheddar fundido, irresistible y delicioso.",
         tipoDeCocina: "Argentina",
         img: 'IMG/Papas.png'
     },

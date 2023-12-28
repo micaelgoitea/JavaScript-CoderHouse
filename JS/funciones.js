@@ -30,10 +30,10 @@ const agregarALaCuenta = pedido => {
 
 // Función para mostrar la cuenta final de todos los pedidos de una mesa.
 
-function mostrarCuenta () {
+function mostrarCuenta() {
     const cuentaFinal = document.getElementById('cuenta-final');
     cuentaFinal.innerHTML = '<h2>Cuenta Final:</h2>';
-    cuenta.forEach (plato => {
+    cuenta.forEach(plato => {
         cuentaFinal.innerHTML += `
             <p>${plato.nombre} \t $${plato.precio}</p>
         `;
@@ -56,7 +56,7 @@ function filtrarComidaSinTACC(plato) {
 
 function comidaParaCeliacos() {
     const comidaSinTacc = menuDeComida.filter(filtrarComidaSinTACC);
-    console.log("Platos celíacos:");
+    //console.log("Platos celíacos:");
     //visualizarMenu(comidaSinTacc);
 }
 
@@ -74,7 +74,7 @@ function filtrarComidaVegetariana(plato) {
 
 function comidaParaCeliacosYVegetarianos() {
     const comidaSinTaccYVegetarianas = menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);
-    console.log("Platos celíacos y vegetarianos:");
+    //console.log("Platos celíacos y vegetarianos:");
     //visualizarMenu(comidaSinTaccYVegetarianas);
 }
 
@@ -87,18 +87,17 @@ function platoMasEconomico(listaDeComida) {
     var valorMasEconomico = listaDeComida[0].precio;
     var platoDeMenorValor = listaDeComida[0].nombre;
 
-    for (var i = 1; i < listaDeComida.length ; i++) {
+    for (var i = 1; i < listaDeComida.length; i++) {
         if (listaDeComida[i].precio < valorMasEconomico) {
             valorMasEconomico = listaDeComida[i].precio;
             platoDeMenorValor = listaDeComida[i].nombre;
         }
     }
-    console.log ("Plato mas económico: " + platoDeMenorValor);
 }
 
 platoMasEconomico(menuDeComida);
 
-function sincronizarStorage () {
+function sincronizarStorage() {
     localStorage.setItem('cuentaFinal', JSON.stringify(cuenta));
 }
 
@@ -106,4 +105,4 @@ function sincronizarStorage () {
 window.addEventListener("DOMContentLoaded", () => {
     cuenta = JSON.parse(localStorage.getItem("cuentaFinal")) || [];
     mostrarCuenta();
-  });
+});
