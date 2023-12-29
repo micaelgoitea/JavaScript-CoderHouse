@@ -1,6 +1,7 @@
 // Array con los Platos de Comida
 
 const contenedorPlatos = document.getElementById('contenedor-platos');
+const botonDeVaciado = document.getElementById('vaciar-cuenta');
 const contenedorPlatosSinTacc = document.getElementById('contenedor-platos-celiacos')
 
 const menuDeComida = [
@@ -90,4 +91,4 @@ const menuDeComida = [
     }
 ]
 
-const cuenta = [];
+let cuenta = [];

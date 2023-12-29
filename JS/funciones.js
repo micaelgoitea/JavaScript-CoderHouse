@@ -1,4 +1,4 @@
-// Función para visualuzar el menú disponible para pedir.
+// Función para visualizar el menú disponible para pedir.
 
 const visualizarLaCarta = () => {
     menuDeComida.forEach(plato => {
@@ -38,29 +38,27 @@ function mostrarCuenta() {
             <p>${plato.nombre} \t $${plato.precio}</p>
         `;
     });
+    cuentaFinal.innerHTML += `
+            <h3>Total de la Cuenta: $${totalDeLaCuenta()}</h3>
+        `;
     sincronizarStorage();
 }
 
-// Array Method para filtrar y obtener solo la comida apta para celíacos.
+// Calcular el total de la cuenta
 
-const visualizarLaCartaParaCeliacos = () => {
-    menuDeComida.forEach(plato => {
-        if(plato.sinTACC) {
-            contenedorPlatosSinTacc.innerHTML += `
-            <div class="platos-container class="card" style="width: 16rem;">
-                <img src="${plato.img}" />
-                <h4>${plato.nombre}</h4>
-                <p>$${plato.precio}</p>
-                <p>Valoracion: ${plato.valoración}</p>
-                <p>${plato.tipoDeCocina}</p>
-                <p>${plato.descripcion}</p>
-                <button id="${plato.ID}" class="agregar">Agregar a la Cuenta</button>
-            </div>
-        `;
-        }
-        
-    });
+function totalDeLaCuenta() {
+    let suma = 0;
+    for (const plato of cuenta) {
+        suma += plato.precio;
+    }
+    return suma;
 }
+
+function borrarLaCuenta() {
+    localStorage.clear();
+}
+
+// Array Method para filtrar y obtener solo la comida apta para celíacos.
 
 let sinTACC = true;
 let vegetariana = true;
@@ -74,9 +72,7 @@ function filtrarComidaSinTACC(plato) {
 }
 
 function comidaParaCeliacos() {
-    const comidaSinTacc = menuDeComida.filter(filtrarComidaSinTACC);
-    //console.log("Platos celíacos:");
-    //visualizarMenu(comidaSinTacc);
+    return menuDeComida.filter(filtrarComidaSinTACC);
 }
 
 comidaParaCeliacos();
@@ -92,9 +88,7 @@ function filtrarComidaVegetariana(plato) {
 }
 
 function comidaParaCeliacosYVegetarianos() {
-    const comidaSinTaccYVegetarianas = menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);
-    //console.log("Platos celíacos y vegetarianos:");
-    //visualizarMenu(comidaSinTaccYVegetarianas);
+    return menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);
 }
 
 comidaParaCeliacosYVegetarianos();
@@ -119,7 +113,6 @@ platoMasEconomico(menuDeComida);
 function sincronizarStorage() {
     localStorage.setItem('cuentaFinal', JSON.stringify(cuenta));
 }
-
 
 window.addEventListener("DOMContentLoaded", () => {
     cuenta = JSON.parse(localStorage.getItem("cuentaFinal")) || [];
