@@ -17,6 +17,59 @@ const visualizarLaCarta = () => {
     });
 }
 
+// Función para visualizar el menú disponible apto para celíacos.
+
+const menuSinTacc = menuDeComida.filter((menu) => menu.sinTACC === true);
+
+const visualizarLaCartaSinTacc = (menuDeComida) => {
+
+    menuSinTacc.forEach((plato) => {
+        contenedorPlatosSinTacc.innerHTML += `
+            <div class="platos-container class="card" style="width: 16rem;">
+                <img src="../${plato.img}" />
+                <h4>${plato.nombre}</h4>
+                <p>$${plato.precio}</p>
+                <p>Valoracion: ${plato.valoración}</p>
+                <p>${plato.tipoDeCocina}</p>
+                <p>${plato.descripcion}</p>
+                
+                <button id="${plato.ID}" class="agregar">Agregar a la Cuenta</button>
+            </div>
+        `;
+    });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    visualizarLaCartaSinTacc(menuDeComida);
+});
+
+// Función para visualizar el menú disponible apto para vegetarianos.
+
+const menuVeggie = menuDeComida.filter((menu) => menu.vegetariano === true);
+
+const visualizarLaCartaVegetariana = (menuDeComida) => {
+
+    menuVeggie.forEach((plato) => {
+        contenedorPlatosVeggies.innerHTML += `
+            <div class="platos-container class="card" style="width: 16rem;">
+                <img src="../${plato.img}" />
+                <h4>${plato.nombre}</h4>
+                <p>$${plato.precio}</p>
+                <p>Valoracion: ${plato.valoración}</p>
+                <p>${plato.tipoDeCocina}</p>
+                <p>${plato.descripcion}</p>
+                
+                <button id="${plato.ID}" class="agregar">Agregar a la Cuenta</button>
+            </div>
+        `;
+    });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    visualizarLaCartaVegetariana(menuDeComida);
+});
+
+
 // Función para agregar a la cuenta el Plato que fue clickeado con "Agregar a la Cuenta"
 
 const agregarALaCuenta = pedido => {
@@ -77,7 +130,7 @@ function comidaParaCeliacos() {
 
 comidaParaCeliacos();
 
-// Array method para filtrar la comida para vegetarianos y celíacos.
+// Array method para filtrar la comida para vegetarianos.
 
 function filtrarComidaVegetariana(plato) {
     if (vegetariana) {
@@ -86,6 +139,8 @@ function filtrarComidaVegetariana(plato) {
         return plato;
     }
 }
+
+// Array method para filtrar la comida para vegetarianos y celíacos.
 
 function comidaParaCeliacosYVegetarianos() {
     return menuDeComida.filter(filtrarComidaSinTACC).filter(filtrarComidaVegetariana);

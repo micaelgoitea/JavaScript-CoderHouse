@@ -1,8 +1,9 @@
 // Array con los Platos de Comida
 
 const contenedorPlatos = document.getElementById('contenedor-platos');
+const contenedorPlatosSinTacc = document.getElementById('contenedor-platos-sintacc');
+const contenedorPlatosVeggies = document.getElementById('contenedor-platos-vegetarianos');
 const botonDeVaciado = document.getElementById('vaciar-cuenta');
-const contenedorPlatosSinTacc = document.getElementById('contenedor-platos-celiacos')
 
 const menuDeComida = [
     {
@@ -70,7 +71,7 @@ const menuDeComida = [
         nombre: "Milanesa a la Napolitana",
         precio: 1200,
         valoración: 5,
-        vegetariano: true,
+        vegetariano: false,
         sinTACC: true,
         personasQueComen: 2,
         descripcion: "Milanesa tierna y crujiente, cubierta con salsa, queso derretido y tomate fresco: un placer napolitano irresistible.",
